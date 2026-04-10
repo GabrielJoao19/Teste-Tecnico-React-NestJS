@@ -1,0 +1,19 @@
+FROM node:20
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+# Build do Vite
+RUN npm run build
+
+# Para o Frontend, vamos usar um servidor estático simples (serve)
+# ou você pode usar Nginx. Para simplificar agora:
+RUN npm install -g serve
+
+EXPOSE 5173
+
+CMD ["serve", "-s", "dist", "-l", "5173"]

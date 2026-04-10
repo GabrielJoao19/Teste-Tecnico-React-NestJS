@@ -1,0 +1,23 @@
+# Usa uma imagem estável do Node
+FROM node:20
+
+# Cria a pasta do app
+WORKDIR /app
+
+# Copia apenas os arquivos de dependências primeiro (otimiza o cache)
+COPY package*.json ./
+
+# Instala as dependências
+RUN npm install
+
+# Copia o resto do código
+COPY . .
+
+# Faz o build do NestJS para gerar a pasta /dist
+RUN npm run build
+
+# Expõe a porta que o NestJS usa
+EXPOSE 3000
+
+# Comando para rodar a aplicação
+CMD ["npm", "run", "start:prod"]

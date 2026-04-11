@@ -6,7 +6,7 @@ import { FilesModule } from './files/files.module'; // Verifique se o caminho es
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'db',
       port: 5432,
       username: 'postgres', 
       password: 'postgres', 

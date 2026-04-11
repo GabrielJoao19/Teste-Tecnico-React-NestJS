@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Upload, FileText, Image as ImageIcon, Eye, HardDrive } from 'lucide-react';
 
 // URL do seu Backend (Garçom)
-const API_URL = 'http://localhost:3000/files';
+const API_URL = 'http://3.144.72.128:3000/files';
 
 export default function App() {
   const [files, setFiles] = useState<any[]>([]);

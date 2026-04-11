@@ -15,7 +15,7 @@ async function bootstrap() {
     prefix: '/uploads/', // Define que a URL deve começar com /uploads/
   });
 
-  await app.listen(3000);
+  await app.listen(3000, '0.0.0.0');
   console.log(`🚀 Servidor rodando em: http://localhost:3000`);
 }
 bootstrap();

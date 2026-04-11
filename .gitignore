@@ -1,0 +1,15 @@
+# Dependências (Nunca suba isso, é pesado demais)
+node_modules/
+
+# Configurações sensíveis (Suas senhas do banco!)
+.env
+
+# Arquivos de Build (O que o npm gera)
+dist/
+build/
+.next/
+
+# Logs e arquivos do sistema
+npm-debug.log*
+yarn-error.log*
+.DS_Store

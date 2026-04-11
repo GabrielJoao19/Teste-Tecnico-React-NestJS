@@ -31,7 +31,7 @@ export class FilesController {
       throw new BadRequestException('Arquivo não enviado!');
     }
     
-    const fileUrl = `http://3.144.72.128:3000/uploads/${file.filename}`;
+    const fileUrl = `http://3.22.172.99:3000/uploads/${file.filename}`;
     // Aqui enviamos os dados para o Service salvar no banco
     return this.filesService.create({
       name: file.originalname,

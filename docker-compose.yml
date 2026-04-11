@@ -21,9 +21,10 @@ services:
     environment:
       DATABASE_HOST: db
       DATABASE_PORT: 5432
-      DATABASE_USER: postgres
-      DATABASE_PASSWORD: postgres
-      DATABASE_NAME: teste_upload
+      DATABASE_USER: ${POSTGRES_USER}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
+      DATABASE_NAME: ${POSTGRES_DB}
+      APP_URL: ${APP_URL}
     depends_on:
       - db
 
@@ -33,6 +34,8 @@ services:
     restart: always
     ports:
       - "5173:5173"
+    environment:
+      - VITE_API_URL=${VITE_API_URL}
     depends_on:
       - backend
 

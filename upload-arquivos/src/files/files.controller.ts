@@ -1,4 +1,4 @@
-import { Controller, Post, Get, UseInterceptors, UploadedFile, BadRequestException } from '@nestjs/common';
+import { Controller, Post, Get, Delete, Param, UseInterceptors, UploadedFile, BadRequestException } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { FilesService } from './files.service';
 import { diskStorage } from 'multer';
@@ -44,5 +44,11 @@ export class FilesController {
   @Get()
   findAll() {
     return this.filesService.findAll();
+  }
+
+  @Delete(':id') 
+  async remove(@Param('id') id: string) { 
+    // O @Param('id') busca na URL o que foi definido no @Delete(':id')
+    console.log(id); // Se a URL foi /files/20, aqui vai imprimir "20"
   }
 }

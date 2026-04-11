@@ -47,8 +47,7 @@ export class FilesController {
   }
 
   @Delete(':id') 
-  async remove(@Param('id') id: string) { 
-    // O @Param('id') busca na URL o que foi definido no @Delete(':id')
-    console.log(id); // Se a URL foi /files/20, aqui vai imprimir "20"
+  async remove(@Param('id') id: string) {
+    return await this.filesService.remove(id); 
   }
 }

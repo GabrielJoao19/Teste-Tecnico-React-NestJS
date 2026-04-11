@@ -74,7 +74,7 @@ export default function App() {
           </div>
           <div>
             <h1 className="text-2xl font-bold text-gray-800">Meu Cloud Pessoal</h1>
-            <p className="text-gray-500 text-sm">NestJS + React + PostgreSQL</p>
+            <p className="text-gray-500 text-sm">NestJS + React + PostgreSQL + AWS</p>
           </div>
         </header>
 

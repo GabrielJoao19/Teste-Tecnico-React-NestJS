@@ -2,9 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Upload, FileText, Image as ImageIcon, Eye, HardDrive, Trash2 } from 'lucide-react';
 
-// Se estiver testando LOCAL, use localhost. 
-// Se estiver na AWS, mude para: 'http://3.144.72.128:3000/files'
-const API_URL = 'http://3.22.172.99:3000/files';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/files';
 
 export default function App() {
   const [files, setFiles] = useState<any[]>([]);
